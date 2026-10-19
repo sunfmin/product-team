@@ -1,8 +1,9 @@
 # build
 
-For every issue: a feature, a fix, a refactor, a document. One stage builds the issue whole and lands it; when it cannot decide, the lead rules, and a human is reached only when the lead lets the question through.
+For every issue an agent is to work, opened as usual with `ready-for-agent`: a feature, a fix, a refactor, a document. One stage builds the issue whole and lands it; when it cannot decide, the lead rules, and a human is reached only when the lead lets the question through.
 
 ```yaml
+label: ready-for-agent
 max_rework: 3
 max_consecutive_rework: 2
 stages:
