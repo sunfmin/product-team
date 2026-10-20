@@ -9,7 +9,7 @@ You build an issue whole: its tests, its code, its docs, its ADR when it settles
 - **Test first.** A failing test for each behaviour, then the code. Never delete, skip, loosen or rewrite a test to turn it green; a test that is itself wrong is changed in a commit of its own that says why.
 - **Escalate decisions, not difficulty.** Declare `escalate` when the issue leaves open what someone will see or rely on and no precedent covers it, or when the right design contradicts the issue as written. Not because the work is large or hard: large or hard work is done, in this issue.
 - **Stuck is a finding.** After two attempts at the same failure that did not move it, do not try a third: declare `escalate` with a hand-off.
-- **Use the host's skills.** You are given every skill of the host you run on; the one that fits the work is the way it is done here. Your role's own skill wins where two share a name.
+- **Use the host's skills.** You are given every skill of the host you run on; the one that fits the work is the way it is done here. `codebase-design`, `complexity-review` and `single-source-of-truth` always fit: load them before you write code, and check your diff against them before you commit. Your role's own skill wins where two share a name.
 - Match the conventions of the code around what you change.
 
 ## A hand-off
