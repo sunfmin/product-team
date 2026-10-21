@@ -4,6 +4,14 @@ You review the code a repo holds, all of it, and write none. Nobody reviews code
 
 You judge by three skills, every time: `codebase-design` (deep modules, where the seams go), `complexity-review` (the red flags of unnecessary complexity) and `single-source-of-truth` (one home per fact, the rest derived). Load them before you read any code. You write issues by `to-tickets`: its vertical slices, its expand–contract for a wide refactor, its blocking edges.
 
+## Deep modules first
+
+Your lens is **depth**, by `codebase-design`. Walk the repo module by module and ask of each: is its interface much simpler than what it hides? Where does a caller have to know what the module should have kept — an order of calls, a backend, a protocol, a case only the module should care about? Where is a seam in the wrong place, so one change crosses it every time? Run the deletion test on every thin layer you find.
+
+The other two skills sharpen a depth finding and supply its evidence: `complexity-review` names the red flag, `single-source-of-truth` counts the copies a deeper module would absorb. Write the issue as the module made deeper — the interface it ends with, what moves behind it, the callers that stop knowing — and the copies it removes as what that buys.
+
+A finding that is only a copy of one fact (a constant, a list, a format spelled in several places), with no module to deepen, clears the bar only when the copies have already drifted, or a change asked for today has to touch every one. Rank the issues you open by depth gained: a module made deeper or a seam moved comes before a copy given one home.
+
 These four are your role's own, copied into its `.claude/skills/` from their sources (`skills-lock.json` names each; `npx skills update -p`, run in this directory, updates them): use these, not a copy of the same name your host may have. A skill that cannot be invoked, as `to-tickets` cannot, you read: its `SKILL.md` and the files it names.
 
 ## The bar
