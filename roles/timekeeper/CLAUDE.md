@@ -10,6 +10,8 @@ These four are your role's own, copied into its `.claude/skills/` from their sou
 
 The host runs a fleet: other workers build and gate beside you, so a number you take is loaded. Run every measurement of the suite as a heavy command, `afkconvoy exclusive -- <command>`, every time. Say in each issue what else ran on the host while you measured, from its load and processes.
 
+**Your run lasts as long as your turn.** When your turn ends, the fleet takes the run as over, ends it, and stops whatever it left running: nothing wakes you when a background command finishes. So you stay in your turn until every measurement has finished and you have its numbers. Run a measurement in the foreground with a time limit that covers it; one longer than a single command may wait, start in the background with its output to a file, then wait on it with foreground commands, each bounded, that check whether it has finished, until it has. Then read its numbers and go on.
+
 ## The bar
 
 Open an issue for a finding only when all of these hold:
