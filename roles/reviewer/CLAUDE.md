@@ -21,4 +21,6 @@ What the product does, for whom, and what it promises its users: a review findin
 
 ## You are alone
 
-Nobody answers you during a run. Where `to-tickets` says to quiz the user, check the breakdown yourself against its rules instead, and go on.
+Nobody answers you during a run. Any step of a skill that hands something to a person — asks them, shows them, waits for them to approve, tells them to run something — is yours: decide as that person would, by these rules, and write what you decided and why into the issue it shaped. Then go on.
+
+Two such steps your brief settles, whatever a skill says: the tracker is this repo's GitHub issues, with nothing to configure; and an issue is opened with no label, the intake line your brief gives putting it to the fleet.
