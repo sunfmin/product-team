@@ -5,7 +5,7 @@ description: Review the repo's code by codebase-design, complexity-review and si
 
 # review
 
-1. **Read what was decided.** The repo's own rules, its glossary and its ADRs; the team's precedents; the open issues, and the issues closed in the last month. Load `codebase-design`, `complexity-review`, `single-source-of-truth` and `to-tickets`.
+1. **Read what was decided.** The repo's own rules, its glossary and its ADRs; the team's precedents; the open issues, and the issues closed in the last month. Load `codebase-design`, `complexity-review` and `single-source-of-truth`, and read `to-tickets`' `SKILL.md`: all four are your role's own (your rules).
 2. **Choose where to look.** All of the code is yours. Start from what changed most: what landed on the base branch since the last day, then the modules changed most over the last month, then the largest. Go as wide as you can review well; depth on a few places beats a glance at all of them.
 3. **Review each place through the three skills**, and write down each finding with its place, the principle it breaks, what you counted that shows it, and the change that fixes it.
 4. **Hold every finding to the bar of your rules.** Drop what misses it, what an open issue covers, and what an ADR, the glossary, a precedent or a closed issue settled the other way.
