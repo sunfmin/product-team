@@ -7,4 +7,5 @@ by: reviewer
 do: review
 every: 1h
 max_open: 5
+max_runs_a_day: 5
 ```
