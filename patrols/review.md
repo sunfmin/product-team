@@ -5,6 +5,6 @@ Reviews the code of the repo by the three design skills, and opens what is worth
 ```yaml
 by: reviewer
 do: review
-every: 1d
+every: 1h
 max_open: 5
 ```
