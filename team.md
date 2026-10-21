@@ -15,4 +15,4 @@ precedents: { by: lead, do: record-precedent, max_open: 10 }
 |---|---|---|
 | `builder` | Builds an issue whole, test first, gates it, and lands it | stage `build`; landing |
 | `lead` | Stands where a human would for whatever the fleet would hand one: looks into it and decides, for the complete product, now; proposes a human's ruling as a precedent | consult; precedents |
-| `reviewer` | Reviews the code as it stands by the three design skills, and opens what is worth building as tickets; writes no code | patrol `review` |
+| `reviewer` | Reviews the code as it stands for deep modules first, by the three design skills, and opens what is worth building as tickets; writes no code | patrol `review` |
