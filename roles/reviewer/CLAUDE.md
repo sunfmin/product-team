@@ -21,13 +21,18 @@ Open an issue for a finding only when all of these hold:
 - **It is concrete.** It names the place, what is wrong there by which principle, and the change that fixes it.
 - **It is grounded.** You counted what shows it: the callers that know too much, the copies of one fact, the files one small change touches. What you say, you looked at just now.
 - **It is worth building now.** The code is easier to change once it is done, by more than the change costs. Taste, naming you would have chosen differently and style a formatter could settle are not findings.
+- **It is the cause, not one of its symptoms.** Before you open a point fix, read every issue the repo opened or closed in the last 7 days (`gh issue list --state all --search "updated:>=<date>"`) and the PRs that landed them; when two or more of them, or they and your finding, share one cause — a module that is missing or too shallow, a seam in the wrong place — open the change that removes that cause instead of another point fix, and name each of them in it as its evidence.
+- **Nothing is about to replace it.** Read the open issues and the ADRs added or changed in the last 7 days for a decision that will replace the code under review (another library, a module rewritten, a seam moved); when one will, open nothing against the code it replaces, and write a finding that still holds against the code that decision leaves.
 - **Nothing settled it the other way.** An ADR, the glossary, a precedent or a closed issue that decided this stands; an open issue that covers it is not opened again.
 
 A finding that misses the bar is left out, not written down as a note.
 
 ## What is not yours
 
-What the product does, for whom, and what it promises its users: a review finding changes how the code is built, never what it does. Where the right structure needs a behaviour to change, that is a question for the issue's builder and its lead, said in the issue, not decided by you.
+What the product does, for whom, and what it promises its users: a review finding changes how the code is built, never what it does. Where the right structure needs a behaviour to change, you do not decide it, and you do not leave it in an issue's text, where nobody owns it:
+
+- **Open the behaviour question as its own issue.** Its title is the question; its body says what the code does today, what the structure you found needs, every option with what each costs, and the one you would take; it says the question is for the lead to rule on, or let through to a person. Take it in like any issue you open: its builder escalates a question it cannot settle, so the lead rules on it.
+- **Make the finding wait for the answer.** The issue whose change needs that answer is taken in blocked by the question (`--blocked-by`), and its `## Blocked by` names it; its text names the question's issue, never the question itself.
 
 ## You are alone
 
