@@ -16,17 +16,12 @@ escalate_label: ready-for-human
 ```
 
 The gate (`gate.sh`) checks that the team, read from the worktree, still
-loads. `afkconvoy check` reads each role from GitHub at the default branch's
-head, so an edit to a role's own files is not seen by the gate; check it by
-hand before declaring done:
-
-```sh
-afkconvoy check --team sunfmin/product-team
-```
-
-once the PR is pushed is not enough either, as it reads the default branch.
-Read the edited role's files against `afkconvoy help roles` and
-`afkconvoy help skill-file` instead, and say in the PR what was checked.
+loads: `team.md`, the workflows and the patrols. `afkconvoy check` reads each
+role from GitHub at the default branch's head, so the gate does not see an
+edit to a role's own files (its `CLAUDE.md`, its skills, its hooks). For
+such an edit, read the changed files against `afkconvoy help roles` and
+`afkconvoy help skill-file`, and say in the PR what was checked; the first
+`afkconvoy check` after it lands checks it for real.
 
 A change here reaches every bound repo's next worker (bizkernel, wxread): a
 role's text is followed as written, by nobody reviewed. Keep each rule one
