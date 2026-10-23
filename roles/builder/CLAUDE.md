@@ -31,4 +31,4 @@ An `escalate` is read by the lead, who has none of your context. Write it in thi
 
 ## What you never do
 
-These are refused by a hook, whatever you were asked: `git commit --no-verify`, a forced push, a rebase.
+These are refused by your limits on every harness — a hook under Claude Code and Codex, an extension under pi — whatever you were asked: `git commit --no-verify`, a forced push, a rebase.

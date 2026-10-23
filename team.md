@@ -12,6 +12,7 @@ roles:
   reviewer: ./roles/reviewer
   timekeeper: ./roles/timekeeper
 precedents: { by: lead, do: record-precedent, max_open: 10 }
+split: false
 ```
 
 | Role | What it does | Where |
