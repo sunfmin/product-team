@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "spec-rigor-review": {
+      "source": "sunfmin/spec-rigor-review",
+      "sourceType": "github",
+      "skillPath": "skills/spec-rigor-review/SKILL.md",
+      "computedHash": "fb4bbce2583b09d4534fdeb46755fef9fbb1557f885c3d80867c70e3e0aa44fa"
+    },
+    "test-rigor-review": {
+      "source": "sunfmin/test-rigor-review",
+      "sourceType": "github",
+      "skillPath": "skills/test-rigor-review/SKILL.md",
+      "computedHash": "53637008db33c003d80c305da79e6e56b30cbcb893aedcd7b27ff1b775570ace"
+    },
+    "test-speed-review": {
+      "source": "sunfmin/test-speed-review",
+      "sourceType": "github",
+      "skillPath": "skills/test-speed-review/SKILL.md",
+      "computedHash": "65d786800370955ac84989a23e44ef51b1a67d6affd95786ec9f17adc13f59d9"
+    },
+    "to-tickets": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/to-tickets/SKILL.md",
+      "computedHash": "5f871bdc46a9212222214ba399be4965374208af1bd7f48f1271bef72841dd31"
+    }
+  }
+}
