@@ -11,7 +11,6 @@ base_branch: main
 gate_command: ./gate.sh
 gate_seconds: 300
 ready_label: ready-for-agent
-concurrency: 2
 escalate_label: ready-for-human
 ```
 
