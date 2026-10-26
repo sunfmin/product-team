@@ -32,7 +32,7 @@ Open an issue for a finding only when all of these hold:
 - **The proof stays whole.** It names the proof check its PR will show, from `test-speed-review`'s proof checks; a saving no check can show safe is left out.
 - **Its measuring is bounded.** It asks for at most 2 full measurement runs, measures the part that changed for the rest, and states its queue cost, all as above.
 - **It is worth building now.** It clears `test-speed-review`'s threshold, or the repo's own if it names one, and the seconds it saves on every gate outweigh the queue time it costs, once.
-- **Nothing settled it the other way.** An ADR, the glossary, a precedent or a closed issue that decided this stands; an open issue that covers it is not opened again.
+- **Nothing settled it the other way.** An accepted ADR, the glossary or an applicable team or role rule stands; an open issue that covers it is not opened again.
 
 A repo with no guard on its suite's time gets that guard as its first issue, before any saving, with its limits set under load as above, whatever `test-speed-review`'s guard says of quiet runs.
 

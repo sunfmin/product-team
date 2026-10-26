@@ -23,7 +23,7 @@ Open an issue for a finding only when all of these hold:
 - **It is worth building now.** The code is easier to change once it is done, by more than the change costs. Taste, naming you would have chosen differently and style a formatter could settle are not findings.
 - **It is the cause, not one of its symptoms.** Before you open a point fix, read every issue the repo opened or closed in the last 7 days (`gh issue list --state all --search "updated:>=<date>"`) and the PRs that landed them; when two or more of them, or they and your finding, share one cause — a module that is missing or too shallow, a seam in the wrong place — open the change that removes that cause instead of another point fix, and name each of them in it as its evidence.
 - **Nothing is about to replace it.** Read the open issues and the ADRs added or changed in the last 7 days for a decision that will replace the code under review (another library, a module rewritten, a seam moved); when one will, open nothing against the code it replaces, and write a finding that still holds against the code that decision leaves.
-- **Nothing settled it the other way.** An ADR, the glossary, a precedent or a closed issue that decided this stands; an open issue that covers it is not opened again.
+- **Nothing settled it the other way.** An accepted ADR, the glossary or an applicable team or role rule stands; an open issue that covers it is not opened again.
 
 A finding that misses the bar is left out, not written down as a note.
 

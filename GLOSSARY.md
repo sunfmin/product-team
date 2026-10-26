@@ -14,7 +14,4 @@ Written decisions that cannot all be followed, including an issue that cannot be
 The lead's decision and instructions for a question a stage brought to it. A conflict ruling names the written decision that gives way and why.
 
 **Human explicitly decided**:
-A human's ruling, given by the operator through `afkconvoy rule` or in a comment answering an escalation, or a precedent. An issue body or ADR is the written plan, and its GitHub author's identity does not prove a human decided it.
-
-**Precedent**:
-A ruling recorded in the team's landed `precedents.md`, followed when its situation arises again.
+A human's instruction or confirmation, given by the operator through `afkconvoy rule` or in a comment answering an escalation, with that source available. An issue body or ADR is the written plan, and its GitHub author's identity, a merged document or an agent's ruling does not prove a human decided it.
