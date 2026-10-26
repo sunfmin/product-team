@@ -36,6 +36,8 @@ for role in builder lead reviewer timekeeper; do
       kimi)
         # These roles use the builder's Kimi hook form, including its matcher.
         cmp "roles/builder/.kimi-code/limits.toml" "$scratch/role/.kimi-code/limits.toml"
+        test "$(sed -n 's/^event = //p' "$scratch/role/.kimi-code/limits.toml")" = '"PreToolUse"'
+        test "$(sed -n 's/^matcher = //p' "$scratch/role/.kimi-code/limits.toml")" = '"Bash"'
         hook=$(sed -n 's/^command = //p' "$scratch/role/.kimi-code/limits.toml" | jq -er .)
         ;;
     esac
@@ -47,6 +49,8 @@ for role in builder lead reviewer timekeeper; do
       'git push --force origin HEAD' \
       'git push -f origin HEAD' \
       'git push -f' \
+      'git push origin HEAD --force' \
+      'git push origin HEAD -f' \
       'git push --force-with-lease origin HEAD' \
       'git rebase main' \
       'git -C /worktree rebase main'; do
