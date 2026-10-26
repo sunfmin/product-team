@@ -5,5 +5,6 @@
 # a role's files is checked once it has landed, by the next run's check.
 set -e
 cd "$(dirname "$0")"
+sh tests/limits.sh
 afkconvoy check --dir . --team sunfmin/product-team >/dev/null
 echo "gate: the team loads"
