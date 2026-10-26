@@ -1,0 +1,19 @@
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*--no-verify*)"
+reason = "a commit is never made with --no-verify"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*push --force*)"
+reason = "a branch is never force-pushed"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(*push -f *)"
+reason = "a branch is never force-pushed"
+
+[[permission.rules]]
+decision = "deny"
+pattern = "Bash(* rebase*)"
+reason = "a branch is never rebased; merge instead"
