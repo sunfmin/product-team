@@ -19,8 +19,10 @@ check_call() {
   fi
   if [ "$expected" -eq 2 ]; then
     test -s "$scratch/err"
-  else
-    test ! -s "$scratch/err"
+  elif [ -s "$scratch/err" ]; then
+    printf '%s/%s: %s: unexpected error output\n' "$role" "$harness" "$command" >&2
+    cat "$scratch/err" >&2
+    exit 1
   fi
 }
 
@@ -28,11 +30,12 @@ for role in builder lead reviewer timekeeper; do
   rm -rf "$scratch/role"
   mkdir "$scratch/role"
   # No parent directory or sibling role is present in a worker's copy.
-  cp -R "roles/$role/.claude" "roles/$role/.codex" "roles/$role/.kimi-code" "$scratch/role/"
-  for harness in claude-code codex kimi; do
+  cp -R "roles/$role/.claude" "roles/$role/.codex" "roles/$role/.kimi-code" "roles/$role/.pi" "$scratch/role/"
+  for harness in claude-code codex kimi pi; do
     case "$harness" in
       claude-code) config="$scratch/role/.claude/settings.json" ;;
       codex) config="$scratch/role/.codex/hooks.json" ;;
+      pi) hook="node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON \"$root/tests/pi-call.mjs\" \"$scratch/role/.pi/extensions/limits.ts\"" ;;
       kimi)
         # These roles use the builder's Kimi hook form, including its matcher.
         cmp "roles/builder/.kimi-code/limits.toml" "$scratch/role/.kimi-code/limits.toml"
@@ -41,9 +44,11 @@ for role in builder lead reviewer timekeeper; do
         hook=$(sed -n 's/^command = //p' "$scratch/role/.kimi-code/limits.toml" | jq -er .)
         ;;
     esac
-    if [ "$harness" != kimi ]; then
-      hook=$(jq -er '[.hooks.PreToolUse[]? | select(.matcher == "Bash") | .hooks[] | select(.type == "command") | .command] | if length == 1 then .[0] else error("expected one Bash refusal hook") end' "$config")
-    fi
+    case "$harness" in
+      claude-code|codex)
+        hook=$(jq -er '[.hooks.PreToolUse[]? | select(.matcher == "Bash") | .hooks[] | select(.type == "command") | .command] | if length == 1 then .[0] else error("expected one Bash refusal hook") end' "$config")
+        ;;
+    esac
     for command in \
       'git commit --no-verify -m test' \
       'git push --force origin HEAD' \

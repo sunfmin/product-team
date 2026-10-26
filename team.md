@@ -4,7 +4,7 @@ A team that builds the whole product an issue describes, now. One role builds; o
 
 A ruling becomes a precedent once it is proposed and lands in `precedents.md`. A human's ruling is proposed after one issue: the fleet starts the lead with `record-precedent` and it opens the PR. The lead's own ruling is proposed once the lead has given the same ruling on two different issues: in the consult that gives it the second time, the lead follows `record-precedent` and opens an issue on this repo that appends the entry, since a consult may not push, and this repo's fleet lands it.
 
-Every role supports Claude Code, Codex and Kimi Code; the builder also supports pi, and no role supports DSH yet.
+Every role supports Claude Code, Codex, Kimi Code and pi; no role supports DSH yet.
 
 Each role keeps its own refusal script because a worker receives only that role's directory; its harnesses call that script, and the gate exercises each role's hooks to keep their refusals alike.
 
