@@ -2,7 +2,7 @@
 
 How the afkconvoy fleet works this repo's backlog: issues labelled
 `ready-for-agent`, each an edit to the team (its rules, roles, skills,
-workflows, patrols or precedents). The repo is unbound: it is the team other
+workflows and patrols). The repo is unbound: it is the team other
 repos bind to, so its own workers are afkconvoy's stock ones, and a hand-off
 goes to afkconvoy's stock consult first.
 
