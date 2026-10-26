@@ -1,0 +1,5 @@
+[[hooks]]
+event = "PreToolUse"
+matcher = "Bash"
+command = "sh .claude/hooks/refuse.sh"
+timeout = 5
