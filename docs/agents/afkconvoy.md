@@ -14,8 +14,8 @@ ready_label: ready-for-agent
 escalate_label: ready-for-human
 ```
 
-The gate (`gate.sh`) exercises each role's Claude Code, Codex, Kimi Code and pi
-refusal hooks from an isolated role directory, then checks that the team,
+The gate (`gate.sh`) exercises each role's Claude Code, Codex, Kimi Code, pi
+and Grok refusal hooks from an isolated role directory, then checks that the team,
 read from the worktree, still loads: `team.md`, the workflows and the patrols.
 The hook checks use `jq` and Node.js with native TypeScript support, and refuse
 unsafe git commands while allowing normal commits, pushes and merges.
