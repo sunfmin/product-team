@@ -30,8 +30,8 @@ for role in builder lead reviewer timekeeper; do
   rm -rf "$scratch/role"
   mkdir "$scratch/role"
   # No parent directory or sibling role is present in a worker's copy.
-  cp -R "roles/$role/.claude" "roles/$role/.codex" "roles/$role/.kimi-code" "roles/$role/.pi" "$scratch/role/"
-  for harness in claude-code codex kimi pi; do
+  cp -R "roles/$role/.claude" "roles/$role/.codex" "roles/$role/.kimi-code" "roles/$role/.pi" "roles/$role/.grok" "$scratch/role/"
+  for harness in claude-code codex kimi pi grok; do
     case "$harness" in
       claude-code) config="$scratch/role/.claude/settings.json" ;;
       codex) config="$scratch/role/.codex/hooks.json" ;;
@@ -42,6 +42,11 @@ for role in builder lead reviewer timekeeper; do
         test "$(sed -n 's/^event = //p' "$scratch/role/.kimi-code/limits.toml")" = '"PreToolUse"'
         test "$(sed -n 's/^matcher = //p' "$scratch/role/.kimi-code/limits.toml")" = '"Bash"'
         hook=$(sed -n 's/^command = //p' "$scratch/role/.kimi-code/limits.toml" | jq -er .)
+        ;;
+      grok)
+        cmp "roles/builder/.grok/config.toml" "$scratch/role/.grok/config.toml"
+        test "$(sed -n 's/^matcher = //p' "$scratch/role/.grok/config.toml")" = '"Bash"'
+        hook=$(sed -n 's/^command = //p' "$scratch/role/.grok/config.toml" | jq -er .)
         ;;
     esac
     case "$harness" in

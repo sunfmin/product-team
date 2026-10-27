@@ -1,0 +1,6 @@
+[[hooks.PreToolUse]]
+matcher = "Bash"
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "sh .claude/hooks/refuse.sh"
+timeout = 10
